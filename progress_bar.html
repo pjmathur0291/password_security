@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #meter{
+            width: 0%;
+            height: 5px;
+            transition: 1s;
+        }
+        .outer{
+            width: 200px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="password" placeholder="Enter your password" onkeyup="getValue(this.value)" name="" id="" class="outer" />
+    <div class="outer">
+        <div id="meter"></div>
+    </div>
+
+    <script>
+        var meters = document.getElementById('meter');
+        function getValue(value) {
+            if (value.length > 0 && value.length < 10) {
+                meters.style.width = "40%";
+                meters.style.backgroundColor = "red";
+            } else if (value.length >= 10 && value.length < 15){ 
+                meters.style.width = "75%";
+                meters.style.backgroundColor = "orange";
+            } else if (value.length >= 15){
+                meters.style.width = "100%";
+                meters.style.backgroundColor = "green";
+            } else {
+                meters.style.width = "0%";
+                meters.style.backgroundColor = "none";
+            }
+        }
+    </script>
+</body>
+</html>
